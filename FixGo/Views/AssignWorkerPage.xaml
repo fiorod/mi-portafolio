@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FixGo.Views.AssignWorkerPage"
+             BackgroundColor="White"
+             Title="">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <!-- Encabezado usuario logeado -->
+            <Border Stroke="#E0E0E0"
+                    StrokeShape="RoundRectangle 20"
+                    BackgroundColor="#F8FAFC"
+                    Padding="15"
+                    Margin="0,0,0,15"
+                    Shadow="5,5,10,Black">
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                    <Image Source="account_circle.svg" HeightRequest="40" WidthRequest="40" />
+                    <VerticalStackLayout Grid.Column="1" Padding="10,0,0,0">
+                        <Label x:Name="userNameLabel" Text="" FontAttributes="Bold" />
+                        <Label x:Name="userLocationLabel" Text="" FontSize="12" TextColor="Gray" />
+                    </VerticalStackLayout>
+                    <ImageButton Source="notifications.png"
+                     Grid.Column="2"
+                     BackgroundColor="Transparent"
+                     HeightRequest="24"
+                     WidthRequest="24"
+                     Clicked="OnNotificationsClicked"/>
+                </Grid>
+            </Border>
+
+            <!-- Título -->
+            <Label Text="Trabajos Disponibles" 
+                   FontAttributes="Bold" 
+                   FontSize="15" 
+                   HorizontalOptions="Start" />
+
+            <!-- Lista de trabajos -->
+            <CollectionView x:Name="workerList"
+                            SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Stroke="#E0E0E0"
+                                StrokeShape="RoundRectangle 25"
+                                BackgroundColor="#F8FAFC"
+                                Padding="20"
+                                Margin="0,0,0,20"
+                                Shadow="3,3,6,Gray">
+                            <VerticalStackLayout Spacing="10">
+                                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto">
+                                    <Label Text="Servicio:" FontAttributes="Bold" />
+                                    <Label Text="{Binding Servicio}" Grid.Column="1" />
+                                </Grid>
+
+                                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto">
+                                    <Label Text="Subcategoría:" FontAttributes="Bold" Grid.Row="1" />
+                                    <Label Text="{Binding Subcategoria}" Grid.Column="1" Grid.Row="1" />
+                                </Grid>
+
+                                <Grid ColumnDefinitions="Auto,*">
+                                    <Label Text="Cliente:" FontAttributes="Bold" />
+                                    <Label Text="{Binding Cliente}" Grid.Column="1" />
+                                </Grid>
+
+                                <Grid ColumnDefinitions="Auto,*">
+                                    <Label Text="Descripción:" FontAttributes="Bold" />
+                                    <Label Text="{Binding Descripcion}" Grid.Column="1" />
+                                </Grid>
+
+                                <Label Text="Días y horas:" FontAttributes="Bold" />
+
+                                <VerticalStackLayout>
+                                    <HorizontalStackLayout>
+                                        <Label Text="{Binding LunesHoras}" />
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout>
+                                        <Label Text="{Binding MartesHoras}" />
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout>
+                                        <Label Text="{Binding ViernesHoras}" />
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+
+                                <Button Text="Tomar Trabajo"
+                                        BackgroundColor="#B6D4E9"
+                                        TextColor="Black"
+                                        CornerRadius="10"
+                                        HeightRequest="45"
+                                        Clicked="OnTakeJobClicked" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FixGo.Views.TicketHistoryPage"
+             Title="">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <Border Stroke="#E0E0E0"
+                    StrokeShape="RoundRectangle 20"
+                    BackgroundColor="#F8FAFC"
+                    Padding="15"
+                    Shadow="5,5,10,Black">
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                    <Image Source="account_circle.svg" HeightRequest="40" WidthRequest="40" />
+                    <VerticalStackLayout Grid.Column="1" Padding="10,0,0,0">
+                        <Label x:Name="userNameLabel" Text="" FontAttributes="Bold" />
+                        <Label x:Name="userLocationLabel" Text="" FontSize="12" TextColor="Gray" />
+                    </VerticalStackLayout>
+                    <ImageButton Source="notifications.png"
+                                 Grid.Column="2"
+                                 BackgroundColor="Transparent"
+                                 HeightRequest="24"
+                                 WidthRequest="24"
+                                 Clicked="OnNotificationsClicked"/>
+                </Grid>
+            </Border>
+
+            <Label Text="Tus Tiquetes" FontSize="20" FontAttributes="Bold" />
+
+            <VerticalStackLayout x:Name="ticketContainer" Spacing="15">
+                <!-- Las tarjetas se agregan desde el code-behind -->
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FixGo.Views.CreateAppointmentPage"
+             BackgroundColor="White"
+             Title="">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <!-- Encabezado de usuario logeado -->
+            <Border Stroke="#E0E0E0"
+                    StrokeShape="RoundRectangle 20"
+                    BackgroundColor="#F8FAFC"
+                    Padding="15"
+                    Shadow="5,5,10,Black">
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                    <Image Source="person.svg" HeightRequest="40" WidthRequest="40" />
+                    <VerticalStackLayout Grid.Column="1" Padding="10,0,0,0">
+                        <Label x:Name="userNameLabel" FontAttributes="Bold" />
+                        <Label x:Name="userLocationLabel" FontSize="12" TextColor="Gray" />
+                    </VerticalStackLayout>
+                    <ImageButton Source="notifications.png"
+                                 Grid.Column="2"
+                                 BackgroundColor="Transparent"
+                                 HeightRequest="24"
+                                 WidthRequest="24"
+                                 Clicked="OnNotificationsClicked"/>
+                </Grid>
+            </Border>
+
+            <!-- Título -->
+            <Label Text="Crear Cita" FontAttributes="Bold" FontSize="20" HorizontalOptions="Start" />
+
+            <!-- Card resumen del trabajo -->
+            <Border Stroke="#E0E0E0"
+                    StrokeShape="RoundRectangle 25"
+                    BackgroundColor="#F8FAFC"
+                    Padding="20"
+                    Shadow="2,2,6,Gray">
+
+                <VerticalStackLayout Spacing="10">
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto">
+                        <Label Text="Servicio:" FontAttributes="Bold" />
+                        <Label x:Name="servicioLabel" Grid.Column="1" />
+                        <Label Text="Subcategoría:" FontAttributes="Bold" Grid.Row="1" />
+                        <Label x:Name="subcategoriaLabel" Grid.Column="1" Grid.Row="1" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="Auto,*">
+                        <Label Text="Dirección:" FontAttributes="Bold" />
+                        <Label x:Name="direccionLabel" Grid.Column="1" />
+                    </Grid>
+
+                    <Grid ColumnDefinitions="Auto,*">
+                        <Label Text="Descripción:" FontAttributes="Bold" />
+                        <Label x:Name="descripcionLabel" Grid.Column="1" />
+                    </Grid>
+
+                    <Label Text="Fecha y hora disponibles:" FontAttributes="Bold" />
+                    <CollectionView x:Name="fechaHoraCollection">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding}" FontSize="12" TextColor="Black"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Card seleccionar cita -->
+            <Border Stroke="#E0E0E0"
+                    StrokeShape="RoundRectangle 25"
+                    BackgroundColor="#F8FAFC"
+                    Padding="20"
+                    Shadow="2,2,6,Gray">
+
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="Fecha y hora seleccionada:" FontAttributes="Bold" />
+                    <Picker x:Name="fechaHoraPicker" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Botón crear trabajo -->
+            <Button Text="Crear Trabajo"
+                    Clicked="OnCreateJobClicked"
+                    BackgroundColor="#5BA8D0"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="45"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    WidthRequest="200"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FixGo.Views.ClientRegisterPage"
+             Title="Registro de Cliente"
+             BackgroundColor="#F2F6FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+            <Label x:Name="pageTitle"
+                   Text="Registro de Cliente"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#5BA8D0" />
+
+            <Entry x:Name="usernameEntry" Placeholder="Nombre de usuario" />
+            <Entry x:Name="passwordEntry" Placeholder="Contraseña" IsPassword="True" />
+            <Entry x:Name="emailEntry" Placeholder="Correo electrónico" Keyboard="Email" />
+
+            <Entry x:Name="nameEntry" Placeholder="Primer nombre" />
+            <Entry x:Name="secondNameEntry" Placeholder="Segundo nombre" />
+            <Entry x:Name="lastName1Entry" Placeholder="Primer apellido" />
+            <Entry x:Name="lastName2Entry" Placeholder="Segundo apellido" />
+            <Entry x:Name="phoneEntry" Placeholder="Teléfono" Keyboard="Telephone" />
+
+            <Entry x:Name="addressEntry" Placeholder="Dirección" />
+            <Entry x:Name="senasEntry" Placeholder="Señas" />
+            <Entry x:Name="houseEntry" Placeholder="Número de casa" />
+
+            <Button Text="Registrar"
+                    Clicked="OnRegisterClicked"
+                    BackgroundColor="#5BA8D0"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    FontAttributes="Bold" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FixGo.Views.AdminMainPage"
+             BackgroundColor="#F2F6FA"
+             Title="Panel de Administrador">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="30">
+
+            <Border Stroke="#E0E0E0"
+                    StrokeShape="RoundRectangle 20"
+                    BackgroundColor="#F8FAFC"
+                    Padding="15"
+                    Margin="0,0,0,130"
+                    Shadow="5,5,10,Black">
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                    <Image Source="account_circle.svg" HeightRequest="40" WidthRequest="40" />
+                    <VerticalStackLayout Grid.Column="1" Padding="10,0,0,0">
+                        <Label x:Name="userNameLabel" Text="" FontAttributes="Bold" />
+                        <Label x:Name="userLocationLabel" Text="" FontSize="12" TextColor="Gray" />
+                    </VerticalStackLayout>
+                    <ImageButton Source="notifications.png"
+                     Grid.Column="2"
+                     BackgroundColor="Transparent"
+                     HeightRequest="24"
+                     WidthRequest="24"
+                     Clicked="OnNotificationsClicked"/>
+                </Grid>
+            </Border>
+
+            <!-- Botones de navegación -->
+            <VerticalStackLayout Spacing="35" HorizontalOptions="Center">
+
+                <!-- Perfiles de trabajadores -->
+                <Border Stroke="#E0E0E0"
+            StrokeShape="RoundRectangle 20"
+            BackgroundColor="#F8FAFC"
+            Padding="20"
+            WidthRequest="300"
+            HeightRequest="100"
+            Shadow="5,5,10,Gray">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnWorkerProfilesClicked" />
+                    </Border.GestureRecognizers>
+
+                    <HorizontalStackLayout Spacing="15">
+                        <Image Source="handyman_50.svg" HeightRequest="50" />
+                        <Label Text="Perfiles de trabajadores"
+                   VerticalOptions="Center"
+                   FontAttributes="Bold"
+                   FontSize="15"
+                   TextColor="Black" />
+                    </HorizontalStackLayout>
+                </Border>
+
+                <!-- Perfiles de clientes -->
+                <Border Stroke="#E0E0E0"
+            StrokeShape="RoundRectangle 20"
+            BackgroundColor="#F8FAFC"
+            Padding="20"
+            WidthRequest="300"
+            HeightRequest="100"
+            Shadow="5,5,10,Gray">
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnClientProfilesClicked" />
+                    </Border.GestureRecognizers>
+
+                    <HorizontalStackLayout Spacing="15">
+                        <Image Source="account_circle.png" HeightRequest="60" />
+                        <Label Text="Perfiles de clientes"
+                   VerticalOptions="Center"
+                   FontAttributes="Bold"
+                   FontSize="15"
+                   TextColor="Black" />
+                    </HorizontalStackLayout>
+                </Border>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

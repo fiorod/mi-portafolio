@@ -1,0 +1,21 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FixGo.Views.RegisterTypePage"
+             Title="Registro"
+             >
+            
+
+    <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+        <Label Text="Seleccione el tipo de registro" FontSize="20" HorizontalOptions="Center" />
+
+        <Button Text="Registrarse como Cliente"
+                Clicked="OnClienteClicked"
+                BackgroundColor="#5BA8D0"
+                TextColor="White" />
+
+        <Button Text="Registrarse como Trabajador"
+                Clicked="OnTrabajadorClicked"
+                BackgroundColor="#5BA8D0"
+                TextColor="White" />
+    </VerticalStackLayout>
+</ContentPage>

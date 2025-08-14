@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FixGo.Views.RegisterPage"
+             BackgroundColor="#F2F6FA">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+            <Label Text="¡Bienvenido!" 
+                   FontSize="28" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#5BA8D0" />
+
+            <Border Stroke="#E0E0E0"
+                    StrokeShape="RoundRectangle 20"
+                    BackgroundColor="#F8FAFC"
+                    Padding="15"
+                    Shadow="5,5,10,Black">
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                    <Image Source="account_circle.svg" HeightRequest="40" WidthRequest="40" />
+                    <VerticalStackLayout Grid.Column="1" Padding="10,0,0,0">
+                        <Label Text="Registro de nuevo usuario" FontAttributes="Bold" FontSize="16" />
+                        <Label Text="Complete los datos para continuar" FontSize="12" TextColor="Gray" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <Entry x:Name="usernameEntry" Placeholder="Nombre de usuario" />
+            <Entry x:Name="passwordEntry" Placeholder="Contraseña" IsPassword="True" />
+            <Entry x:Name="emailEntry" Placeholder="Correo electrónico" Keyboard="Email" />
+
+            <Entry x:Name="nameEntry" Placeholder="Primer nombre" />
+            <Entry x:Name="secondNameEntry" Placeholder="Segundo nombre" />
+            <Entry x:Name="lastName1Entry" Placeholder="Primer apellido" />
+            <Entry x:Name="lastName2Entry" Placeholder="Segundo apellido" />
+
+            <Entry x:Name="phoneEntry" Placeholder="Teléfono" Keyboard="Telephone" />
+
+            <Entry x:Name="addressEntry" Placeholder="Dirección" />
+            <Entry x:Name="senasEntry" Placeholder="Señas" />
+            <Entry x:Name="houseEntry" Placeholder="Número de casa" />
+
+            <Entry x:Name="companyEntry" Placeholder="Empresa (opcional)" />
+            <Picker x:Name="categoryPicker" Title="Seleccione una categoría" />
+
+            <Picker x:Name="rolePicker" Title="Seleccione un rol">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Cliente</x:String>
+                        <x:String>Trabajador</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button Text="Registrarse"
+                    Clicked="OnRegisterClicked"
+                    BackgroundColor="#5BA8D0"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    FontAttributes="Bold" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

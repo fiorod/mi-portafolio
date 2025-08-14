@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FixGo.Views.ProfileWorkersPage"
+             BackgroundColor="White"
+             Title="">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <!-- Encabezado de usuario -->
+            <Border Stroke="#E0E0E0"
+                    StrokeShape="RoundRectangle 20"
+                    BackgroundColor="#F8FAFC"
+                    Padding="15"
+                    Margin="0,0,0,10"
+                    Shadow="5,5,10,Black">  
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                    <Image Source="account_circle.svg" HeightRequest="40" WidthRequest="40" />
+                    <VerticalStackLayout Grid.Column="1" Padding="10,0,0,0">
+                        <Label x:Name="userNameLabel" Text="" FontAttributes="Bold" />
+                        <Label x:Name="userLocationLabel" Text="" FontSize="12" TextColor="Gray" />
+                    </VerticalStackLayout>
+                    <ImageButton Source="notifications.png"
+                     Grid.Column="2"
+                     BackgroundColor="Transparent"
+                     HeightRequest="24"
+                     WidthRequest="24"
+                     Clicked="OnNotificationsClicked"/>
+                </Grid>
+            </Border>
+
+            <!-- Card de perfil -->
+            <Border Stroke="#E0E0E0"
+                    StrokeShape="RoundRectangle 25"
+                    BackgroundColor="#F1F6FA"
+                    Padding="30"
+                    Margin="0"
+                    Shadow="5,5,10,Gray">
+
+                <VerticalStackLayout Spacing="15" HorizontalOptions="Center">
+                    <!-- Avatar -->
+                    <Image Source="account_circle.svg" HeightRequest="100" WidthRequest="100" />
+
+                    <!-- Nombre -->
+                    <Label x:Name="nameEntry" 
+                           Text=""
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center" />
+
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Servicio: " FontAttributes="Bold"/>
+                                <Span x:Name="serviceLabel" Text="" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Compañía: " FontAttributes="Bold"/>
+                                <Span x:Name="companyEntry" Text="" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Teléfono: " FontAttributes="Bold"/>
+                                <Span x:Name="phoneEntry" Text="" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <!-- Botón editar perfil -->
+                    <Button Text="Editar Perfil"
+                            Clicked="OnEditClicked"
+                            BackgroundColor="#B6D4E9"
+                            TextColor="Black"
+                            CornerRadius="10"
+                            HeightRequest="45"
+                            WidthRequest="180"
+                            HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Border>
+
+            <VerticalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Button Text="Cambiar Contraseña"
+                        BackgroundColor="#E4EEF3"
+                        TextColor="Black"
+                        CornerRadius="10"
+                        WidthRequest="180"
+                        HeightRequest="45"
+                        Clicked="OnChangePasswordClicked" />
+
+                <Button Text="Cerrar Sesión"
+                        BackgroundColor="#E4EEF3"
+                        TextColor="Black"
+                        CornerRadius="10"
+                        WidthRequest="180"
+                        HeightRequest="45"
+                        Clicked="OnLogoutClicked" />
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

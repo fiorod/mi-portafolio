@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FixGo.Views.WorkersListPage"
+             Title="Trabajadores"
+             BackgroundColor="#F2F6FA">
+
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout Padding="20" Spacing="15">
+                <CollectionView x:Name="trabajadoresCollection" ItemsLayout="VerticalList">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame CornerRadius="20" Padding="15" Margin="0,5" BackgroundColor="White" HasShadow="True">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!-- Info trabajador -->
+                                    <VerticalStackLayout Grid.Column="0" Spacing="5">
+                                        <Label Text="{Binding NombreCompleto}" FontAttributes="Bold" FontSize="13" />
+                                        <Label Text="{Binding Empresa}" FontSize="13" />
+                                        <Label Text="{Binding Categoria}" FontSize="13" />
+                                        <Label Text="{Binding Telefono}" FontSize="13" />
+                                    </VerticalStackLayout>
+
+                                    <!-- Menú -->
+                                    <ImageButton Source="more.png"
+                                                 HeightRequest="25"
+                                                 WidthRequest="25"
+                                                 BackgroundColor="Transparent"
+                                                 Clicked="OnMenuClicked"
+                                                 CommandParameter="{Binding .}"
+                                                 Grid.Column="1"
+                                                 HorizontalOptions="End"
+                                                 VerticalOptions="Start"/>
+                                </Grid>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Botón Agregar trabajador -->
+        <Button Text="+"
+                Clicked="OnAgregarTrabajadorClicked"
+                BackgroundColor="#5BA8D0"
+                TextColor="White"
+                FontSize="30"
+                WidthRequest="60"
+                HeightRequest="60"
+                CornerRadius="30"
+                HorizontalOptions="End"
+                VerticalOptions="End"
+                Margin="20"
+                Shadow="10"/>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    x:Class="FixGo.Views.ResenaPopup"
+    Size="300,Auto">
+
+    <Border Stroke="#E0E0E0"
+            StrokeShape="RoundRectangle 20"
+            BackgroundColor="#F8FAFC"
+            Padding="20"
+            Shadow="5,5,10,Black">
+        <VerticalStackLayout Spacing="15">
+            <Label Text="Calificá al trabajador" FontSize="18" FontAttributes="Bold" HorizontalOptions="Center" />
+            <HorizontalStackLayout x:Name="EstrellasLayout" HorizontalOptions="Center" Spacing="10" />
+            <Entry x:Name="tituloEntry" Placeholder="Título de la reseña" />
+            <Editor x:Name="descripcionEditor" Placeholder="Descripción" HeightRequest="80" />
+            <Button Text="Enviar reseña"
+                    Clicked="OnEnviarClicked"
+                    BackgroundColor="#5BA8D0"
+                    TextColor="White"
+                    CornerRadius="10"
+                    FontAttributes="Bold" />
+        </VerticalStackLayout>
+    </Border>
+</toolkit:Popup>

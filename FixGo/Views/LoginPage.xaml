@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FixGo.Views.LoginPage"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="25" VerticalOptions="Center">
+
+            <!-- Ícono superior -->
+            <Image Source="logo3d.png" HeightRequest="100" HorizontalOptions="Center" />
+
+            <!-- Título -->
+            <Label Text="¡Bienvenido!" 
+                   FontSize="28" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#5BA8D0" />
+
+            <!-- Caja blanca -->
+            <Border BackgroundColor="#F4F7FA"
+                    Stroke="#E0E0E0"
+                    StrokeShape="RoundRectangle 20"
+                    Padding="25"
+                    Shadow="5,5,10,Black">
+
+                <VerticalStackLayout Spacing="15">
+                    <Entry x:Name="usernameEntry" Placeholder="Usuario" />
+                    <Entry x:Name="passwordEntry" Placeholder="Contraseña" IsPassword="True" />
+
+                    <HorizontalStackLayout HorizontalOptions="End">
+                        <Label Text="Crear perfil"
+                               TextColor="#5BA8D0"
+                               FontSize="13">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnGoToRegister" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </HorizontalStackLayout>
+
+                    <Button Text="Iniciar Sesión"
+                            Clicked="OnLoginClicked"
+                            BackgroundColor="#B6D4E9"
+                            TextColor="Black"
+                            CornerRadius="10"
+                            HeightRequest="45" />
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

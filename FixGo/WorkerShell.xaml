@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Shell
+    x:Class="FixGo.WorkerShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:FixGo.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.BackgroundColor="{StaticResource ShellBackground}"
+    Shell.ForegroundColor="{StaticResource ShellSelected}"
+    Shell.UnselectedColor="{StaticResource ShellUnselected}"
+    Shell.TabBarBackgroundColor="{StaticResource ShellBackground}"
+    Shell.TitleColor="{StaticResource ShellSelected}"
+    Shell.TabBarForegroundColor="{StaticResource ShellSelected}"
+    Shell.TabBarTitleColor="{StaticResource ShellSelected}"
+    Shell.NavBarHasShadow="False">
+
+    <TabBar>
+        <ShellContent
+            Title="Home"
+            Icon="home.svg"
+            ContentTemplate="{DataTemplate views:MainWorkPage}" />
+
+        <!--<ShellContent
+            Title="Finalizados"
+            Icon="task_alt.svg"
+            ContentTemplate="{DataTemplate views:TaskServicesPage}" />
+
+        <ShellContent
+            Title="Buscar"
+            Icon="search.svg"
+            ContentTemplate="{DataTemplate views:AssignWorkerPage}" />-->    
+
+        <ShellContent
+            Title="Perfil"
+            Icon="account_circle.svg"
+            ContentTemplate="{DataTemplate views:ProfileWorkersPage}" />
+    </TabBar>
+</Shell>

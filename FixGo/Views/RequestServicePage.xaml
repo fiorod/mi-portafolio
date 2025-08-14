@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:sys="clr-namespace:System;assembly=netstandard"
+             x:Class="FixGo.Views.RequestServicePage"
+             BackgroundColor="White"
+             Title="">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <!-- Encabezado usuario logeado -->
+            <Border Stroke="#E0E0E0"
+                    StrokeShape="RoundRectangle 20"
+                    BackgroundColor="#F8FAFC"
+                    Padding="15"
+                    Shadow="5,5,10,Black">
+                <Grid ColumnDefinitions="Auto,*,Auto">
+                    <Image Source="account_circle.svg" HeightRequest="40" WidthRequest="40" />
+                    <VerticalStackLayout Grid.Column="1" Padding="10,0,0,0">
+                        <Label x:Name="userNameLabel" Text="" FontAttributes="Bold" />
+                        <Label x:Name="userLocationLabel" Text="" FontSize="12" TextColor="Gray" />
+                    </VerticalStackLayout>
+                    <ImageButton Source="notifications.png"
+                                 Grid.Column="2"
+                                 BackgroundColor="Transparent"
+                                 HeightRequest="24"
+                                 WidthRequest="24"
+                                 Clicked="OnNotificationsClicked"/>
+                </Grid>
+            </Border>
+
+            <!-- Caja de petición -->
+            <Border Stroke="#E0E0E0"
+                    StrokeShape="RoundRectangle 20"
+                    BackgroundColor="#F8FAFC"
+                    Padding="25"
+                    Margin="0"
+                    Shadow="3,3,8,Black">
+
+                <VerticalStackLayout Spacing="15">
+                    <Label Text="Nueva Petición"
+                           FontAttributes="Bold"
+                           FontSize="20"
+                           HorizontalOptions="Center" />
+
+                    <!-- Servicio -->
+                    <Entry x:Name="serviceEntry"
+                           IsReadOnly="True"
+                           BackgroundColor="White"
+                           Placeholder="Servicio" />
+
+                    <!-- Subcategoría -->
+                    <Picker x:Name="subcategoryPicker"
+                            Title="Subcategoría"
+                            BackgroundColor="White" />
+
+                    <!-- Días disponibles -->
+                    <Label Text="Selecione las fechas disponibles" FontAttributes="Bold" />
+
+                    <VerticalStackLayout Spacing="8">
+                        <!-- Picker de Fecha -->
+                        <HorizontalStackLayout>
+                            <CheckBox x:Name="oneDayCheck" CheckedChanged="OnDayCheckChanged"/>
+                            <DatePicker x:Name="onefechaPicker" IsEnabled="False"
+                                        Format="dd/MM/yyyy"
+                                        MinimumDate="{x:Static sys:DateTime.Today}"/>
+                            <!-- Picker de Hora -->
+                            <TimePicker x:Name="onehoraPicker" IsEnabled="False"
+                                        Time="08:00"
+                                        Format="hh:mm tt" />
+                        </HorizontalStackLayout>
+                        
+                        <HorizontalStackLayout>
+                            <CheckBox x:Name="twoDayCheck" CheckedChanged="OnDayCheckChanged"/>
+                            <DatePicker x:Name="twofechaPicker" IsEnabled="False"
+                Format="dd/MM/yyyy"
+                MinimumDate="{x:Static sys:DateTime.Today}" />
+                            <!-- Picker de Hora -->
+                            <TimePicker x:Name="twohoraPicker" IsEnabled="False"
+                                        Time="08:00"
+                                        Format="hh:mm tt" />
+                        </HorizontalStackLayout>
+                        
+                        <HorizontalStackLayout>
+                            <CheckBox x:Name="threeDayCheck" CheckedChanged="OnDayCheckChanged"/>
+                            <DatePicker x:Name="threefechaPicker" IsEnabled="False"
+                Format="dd/MM/yyyy"
+                MinimumDate="{x:Static sys:DateTime.Today}" />
+                            <!-- Picker de Hora -->
+                            <TimePicker x:Name="threehoraPicker" IsEnabled="False"
+                Time="08:00"
+                Format="hh:mm tt" />
+                        </HorizontalStackLayout>
+                        <!-- Día + Hora -->
+                        <!--<HorizontalStackLayout>
+                            <CheckBox x:Name="mondayCheck" CheckedChanged="OnDayCheckChanged"/>
+                            <Label Text="Lunes" VerticalOptions="Center" />
+                            <TimePicker x:Name="mondayTime" WidthRequest="120" IsEnabled="False"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            <CheckBox x:Name="tuesdayCheck" CheckedChanged="OnDayCheckChanged"/>
+                            <Label Text="Martes" VerticalOptions="Center" />
+                            <TimePicker x:Name="tuesdayTime" WidthRequest="120" IsEnabled="False"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            <CheckBox x:Name="wednesdayCheck" CheckedChanged="OnDayCheckChanged"/>
+                            <Label Text="Miércoles" VerticalOptions="Center" />
+                            <TimePicker x:Name="wednesdayTime" WidthRequest="120" IsEnabled="False"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            <CheckBox x:Name="thursdayCheck" CheckedChanged="OnDayCheckChanged"/>
+                            <Label Text="Jueves" VerticalOptions="Center" />
+                            <TimePicker x:Name="thursdayTime" WidthRequest="120" IsEnabled="False"/>
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+                            <CheckBox x:Name="fridayCheck" CheckedChanged="OnDayCheckChanged"/>
+                            <Label Text="Viernes" VerticalOptions="Center" />
+                            <TimePicker x:Name="fridayTime" WidthRequest="120" IsEnabled="False"/>
+                        </HorizontalStackLayout>-->
+                    </VerticalStackLayout>
+
+                    <!-- Botón enviar -->
+                    <Button Text="Pedir Servicio"
+                            Clicked="OnSubmitClicked"
+                            BackgroundColor="#B6D4E9"
+                            TextColor="Black"
+                            CornerRadius="10"
+                            HeightRequest="45" />
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
