@@ -5,7 +5,7 @@ Permite la gestión de servicios como jardinería, fontanería, electricidad y o
 
 ---
 
-## 🚀 Tecnologías utilizadas
+## Tecnologías utilizadas
 - **Frontend:** .NET 8 MAUI (Visual Studio 2022)
 - **Backend:** C# con LINQ y procedimientos almacenados
 - **Base de datos:** SQL Server
@@ -13,7 +13,7 @@ Permite la gestión de servicios como jardinería, fontanería, electricidad y o
 
 ---
 
-## ✨ Características principales
+## Características principales
 - Gestión de usuarios con roles (Administrador, Cliente y Trabajador).
 - Inicio de sesión con validación de credenciales y control de acceso.
 - Registro y asignación de servicios.
@@ -25,9 +25,22 @@ Permite la gestión de servicios como jardinería, fontanería, electricidad y o
 
 ## 📷 Capturas de pantalla
 
+### Autenticación
+![Pantalla de Login](Docs/login.png)
+![Pantalla de Registro](Docs/register.png)
 
-![Pantalla de inicio](docs/pantalla-inicio.png)  
-![Historial de servicios](docs/historial-servicios.png)
+### Cliente
+![Pantalla principal cliente](Docs/client_Main.png)
+![Citas del cliente](Docs/client_appointments.png)
+![Solicitud de servicio](Docs/client_request.png)
+
+### Trabajador
+![Pantalla principal trabajador](Docs/worker_main.png)
+![Citas del trabajador](Docs/worker_appointments.png)
+![Asignar cita trabajador](Docs/worker_setAppointment.png)
+
+### Administrador
+![Pantalla principal administrador](Docs/admin_main.png)
 
 ---
 
